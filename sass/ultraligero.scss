@@ -1,0 +1,902 @@
+/**
+* Cltvo responsive Framework
+* -------------------------
+*
+* Desarrollado por El Cultivo
+* http://elcultivo.mx
+*
+*
+*
+* Usar ese archivo para customizar estilos
+* 
+*/
+
+@charset "UTF-8";
+
+@import "reset";
+@import "_config"; 
+@import "_mixins";
+@import "_funciones";
+@import "_base";
+@import "_reticula"; 
+
+
+/**
+* FUENTES
+* -------
+*/
+
+// Declara tus fuentes usando el MIXINtext-align: right;
+		
+
+@include declara-font-face(Lato, '../fonts/LatoLatin-Regular', normal);
+@include declara-font-face(Lato, '../fonts/LatoLatin-Regular', lighter);
+@include declara-font-face(Lato, '../fonts/LatoLatin-Semibold', bold);
+@include declara-font-face(Lato, '../fonts/LatoLatin-LightItalic', normal, italic);
+/**
+* TIPOGRAFÍA
+* ----------
+*/
+
+// Tamaños de tipografía
+// Crea clases para los principales tamaños que usas
+// Asígnales tamaños usando el MIXIN tamano-fuente()
+
+.tam-prin{ @include tamano-fuente(7, 8); }
+.tam-sec{@include tamano-fuente(5, 6, false);}
+
+.tam-ter{
+	@include tamano-fuente(3, 5, false);
+	p, ul, ol{ @include tamano-fuente(3, 5); }
+	input, textarea{@include tamano-fuente(3, 5, 1); }
+}
+.tam-cuat{
+	p{@include tamano-fuente(2, 5, 2);}
+}
+
+.tam-min{
+	p, ul, ol{ @include tamano-fuente(1); }
+}
+
+
+/**
+* SECCIONES
+* -----------
+*/
+
+// Customiza cada sección
+// Usa las clases que queiras para cada sección
+// Modifica sus estilos aquí
+
+.clear {
+	clear:both;
+}
+
+.seccion-periferico {
+    min-height: 100%;
+    width: 100%;
+	height:auto;
+    
+}
+
+.inicio{
+background-color: none;
+    background: none;
+}
+.servicios{
+background-color: none;
+    background: none;
+}
+.estudio{
+background-color: none;
+    background: none;
+}
+.contacto{
+	background-color: none;
+    background: none;
+}
+
+
+
+h1 {
+	text-align: center;
+	font-family: $fuente-sans;
+	font-size: 18px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 26.4px;
+	left:50%;
+	top:50%;
+	position:absolute;
+	color:black;
+	-ms-transform:  translate(-50%, -50%) ; /* IE 9 */
+    -webkit-transform:  translate(-50%, -50%) ; /* Safari */
+    -moz-transform:  translate(-50%, -50%) ; /* Safari */
+    transform: translate(-50%, -50%);
+}
+
+
+.seccionintro{
+	
+	padding: 0;
+	margin: 0;
+	height: 100%;
+	width: 100%;
+	min-height: 100%;
+	background-color: #000099;
+	position:relative;
+		
+
+}
+.separacion, .opcion{
+	height: 20px;
+	
+	
+}
+.separacion{
+	
+	width:100px;
+	height: 16px;
+	border-right:solid 1px black;
+	padding-right:10px;
+	padding-bottom:3px;
+}
+
+.menu{
+	letter-spacing: 1px;
+	width: 120px;
+	z-index: 5;
+	text-align: right;
+	font-family: $fuente-sans;
+	font-size: 16px;
+	line-height: 16px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	right:50px;
+	top:50px;
+	position:fixed;
+	color:black;
+	@include respond-to(chico){ 
+		
+		right:35px;
+		bottom:40px;
+		
+	}
+	a{
+		color:black;
+		text-decoration:none;
+		
+    	
+	}
+	a:hover{
+		text-decoration:none;
+		color:black;
+		@include respond-to(chico){ 
+			
+			color:black;
+		}
+	}
+	a:visited{
+		text-decoration:none;
+		color:black;
+		@include respond-to(chico){ 
+			
+			color:black;
+		}
+		}
+}
+.instagram{
+	height:22px;
+	width:22px;
+	right:50px;
+	top:50px;
+	position:fixed;
+	z-index:30;
+	@include respond-to(chico){ 
+			right:20px;
+			top:20px;
+		}
+
+	
+	
+}
+.facebook{
+	z-index:30;
+	height:22px;
+	width:22px;
+	right:85px;
+	top:50px;
+	position:fixed;
+	@include respond-to(chico){ 
+			right:55px;
+			top:20px;
+		}
+}
+.platillo{
+	overflow:hidden !important;
+	h5{
+		color:$color-texto;
+		text-align: left;
+		font-family: $fuente-sans;
+		font-size: 14px;
+		font-style: normal;
+		font-variant: normal;
+		line-height: 26.4px;
+	}
+	min-height:260px;
+	max-height:260px;
+	margin-bottom:30px;
+	margin-top:20px;
+	@include respond-to(chico){ 
+	height:auto;
+			min-height:inherit;
+			max-height:inherit;
+		}
+	p{
+		color:$color-claro;
+		padding-botom: 30px !important;
+		text-align: left;
+		font-family: $fuente-sans;
+		font-size: 12px;
+		font-style: normal;
+		font-variant: normal;
+		line-height: 20px;
+
+	}
+	
+}
+.status-restaurante{
+	z-index: 30;
+	text-align: right;
+	font-family: $fuente-sans;
+	font-size: 16px;
+	line-height: 16px;
+	font-style: normal;
+	font-variant: normal;
+	display: inline-block;
+	line-height: 26.4px;
+	left:50px;
+	top:50px;
+	position:fixed;
+	color:black;
+	@include respond-to(chico){ 
+			LEFT:20px;
+			top:20px;
+		}
+}
+.puntero-direccion{
+	z-index: 5;
+	width:26px;
+	height:26px;
+	left:50px;
+	bottom:52px;
+	position:fixed;
+	@include respond-to(chico){ 
+		width:40px;
+	height:40px;
+	bottom:50px;
+		left:20px;
+	}
+}
+.puntero-telefono{
+	z-index: 5;
+	width:26px;
+	height:26px;
+	right:20px;
+	bottom:50px;
+	position:fixed;
+	display: none;
+	@include respond-to(chico){ 
+		width:40px;
+	height:40px;
+	display: inline-block;
+		
+	}
+}
+
+.puntero-whatsapp{
+	-ms-transform:  translateX(-50%) ; /* IE 9 */
+    -webkit-transform:  translateX(-50%) ; /* Safari */
+    -moz-transform:  translateX(-50%) ; /* Safari */
+    transform: translateX(-50%);
+	z-index: 5;
+	
+	left:50%;
+	bottom:50px;
+	position:fixed;
+	display: none;
+	@include respond-to(chico){ 
+		width:40px;
+		display: inline-block;
+		height:40px;
+			
+	}
+}
+
+
+.direccion{
+	z-index: 5;
+	text-align: right;
+	font-family: $fuente-sans;
+	font-size: 16px;
+	line-height: 16px;
+	font-style: normal;
+	font-variant: normal;
+	display: inline-block;
+	line-height: 26.4px;
+	left:84px;
+	bottom:50px;
+	position:fixed;
+	color:black;
+	@include respond-to(chico){ 
+		display:none;
+	}
+	a{
+		color:black;
+		text-decoration:none;
+		
+    	
+	}
+	a:hover{
+		text-decoration:none;
+		color:black;
+		@include respond-to(chico){ 
+			
+			color:black;
+		}
+	}
+	a:visited{
+		text-decoration:none;
+		color:black;
+		@include respond-to(chico){ 
+			
+			color:black;
+		}
+		}
+}
+.somos{
+	z-index: 5;
+	text-align: right;
+	font-family: $fuente-sans;
+	font-size: 16px;
+	line-height: 16px;
+	font-style: normal;
+	font-variant: normal;
+	display: inline-block;
+	line-height: 26.4px;
+	right:50px;
+	bottom:50px;
+	position:fixed;
+	color:$color-principal;
+	@include respond-to(chico){ 
+		display:none;
+	}
+	a{
+		color:$color-claro;
+		text-decoration:none;
+    	
+	}
+	a:hover{
+		text-decoration:none;
+		color:$color-claro;
+		@include respond-to(chico){ 
+			text-decoration:underline;
+			color:black;
+		}
+	}
+	a:visited{
+		text-decoration:none;
+		color:$color-claro;
+		@include respond-to(chico){ 
+			
+			color:black;
+		}
+		}
+}
+
+.dia-header{
+	  @include respond-to(medio){ 
+		display:none;
+	}
+}
+.texto-direccion{
+	color:$color-principal;
+	z-index: 5;
+	width:26px;
+	left:20px;
+	bottom:20px;
+	position:fixed;
+	text-align: right;
+	font-family: $fuente-sans;
+	font-size: 16px;
+	line-height: 16px;
+	font-style: normal;
+	font-variant: normal;
+	display: none;	
+	
+	@include respond-to(chico){ 
+	
+	display:inline-block;
+		
+	}
+}
+.texto-telefono{
+	color:$color-principal;
+	z-index: 5;
+	text-align: left;
+	font-family: $fuente-sans;
+	font-size: 16px;
+	line-height: 16px;
+	font-style: normal;
+	font-variant: normal;
+	right:20px;
+	bottom:20px;
+	position:fixed;
+	display: none;
+	@include respond-to(chico){ 
+		
+	display: inline-block;
+		
+	}
+}
+
+.texto-whatsapp{
+text-align: center;
+color:$color-principal;
+	font-family: $fuente-sans;
+	font-size: 16px;
+	line-height: 16px;
+	font-style: normal;
+	font-variant: normal;
+	-ms-transform:  translateX(-50%) ; /* IE 9 */
+    -webkit-transform:  translateX(-50%) ; /* Safari */
+    -moz-transform:  translateX(-50%) ; /* Safari */
+    transform: translateX(-50%);
+	z-index: 5;
+	
+	left:50%;
+	bottom:20px;
+	position:fixed;
+	display: none;
+	@include respond-to(chico){ 
+
+		display: inline-block;
+
+			
+	}
+}
+
+.contenido-servicios{
+	text-align: left;
+	font-family: $fuente-sans;
+	font-size: 18px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 26.4px;
+	color:black;
+	padding-left:200px;
+   	padding-right:200px;
+   	position:relative;
+   	min-height:100%;
+   	height:auto;
+   	@include respond-to(medio){ 
+		padding-left:100px;
+   		padding-right:100px;
+	}
+
+    @include respond-to(chico){ 
+		padding:60px;
+	}
+	
+	p{
+		text-align: left;
+		font-family: $fuente-sans;
+		font-size: 14px;
+		font-style: normal;
+		font-variant: normal;
+		font-weight: 500;
+		line-height: 26.4px;
+		color:black;
+		padding-bottom:20px;
+	}
+}
+
+ // Swipper
+  .swiper-container{
+  	padding-top:300px;
+      width: 100% !important;
+   		clear:both;
+   		height:inherit !important;
+   		@include respond-to(chico){ 
+			padding-top:250px;
+		}
+   
+    }
+    
+    .swiper-slide {
+       text-align: center;
+      font-size: 18px;
+     	
+      /* Center slide text vertically */
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+      	
+	      	
+			      	img{
+			      		min-width:100%;
+			      		min-height:100%;
+			      		width:auto;
+			      		height:auto;
+			      		
+			      	}
+	      	
+      
+     
+    }
+    .logo-inicio{
+    	position:fixed;
+    	z-index:30;
+    	left: 50%;
+    	top:60px;
+    	width:300px;
+		height:auto;
+		-ms-transform:  translateX(-50%) ; /* IE 9 */
+	    -webkit-transform:  translateX(-50%) ; /* Safari */
+	    -moz-transform:  translateX(-50%) ; /* Safari */
+	    transform: translateX(-50%);
+	    transition: all 0.4s ease-in-out;
+		  -webkit-transition: all 0.4s ease-in-out;
+		  -moz-transition: all 0.4s ease-in-out ;
+    	-ms-transition: all 0.4s ease-in-out ;
+    	@include respond-to(chico){ 
+			top:70px;
+			width:240px;
+		}
+    }
+    .shrink{
+    	width:150px;
+    	top:26px;
+    	@include respond-to(chico){ 
+			top:40px;
+		}
+    }
+   .contenedor-men{
+   		position:fixed;
+    	width:100%;
+    	top:240px;
+    	@include respond-to(chico){ 
+			top:200px;
+		}
+    	left:0px;
+    	z-index:30;
+    	height:50px !important;
+
+    	.row{
+    	height:50px !important;
+    	}
+    	 transition: all 0.4s ease-in-out;
+		  -webkit-transition: all 0.4s ease-in-out;
+		  -moz-transition: all 0.4s ease-in-out ;
+    	-ms-transition: all 0.4s ease-in-out ;
+   }
+   .shrink-contenedor-me{
+    	
+    	top:115px;
+    }
+   .comida-menu{
+   position:absolute;
+		left:0px;
+	}
+	.nosotros-menu{
+		
+	position:absolute;
+		right:0px;
+	}
+   .contenedor-m{
+   		display:inline-block;
+   		
+   }
+   .nosotros{
+  	 padding-top:205px;
+  	 @include respond-to(chico){ 
+			padding-top:170px;
+		}
+  	 p{
+  	 	 padding-left: 40px;
+  	 	 text-align: left;
+		font-family: $fuente-sans;
+		font-size: 16px;
+		font-style: normal;
+		font-variant: normal;
+		font-weight: 500;
+		line-height: 24px;
+		color:black;
+		@include respond-to(medio){ 
+			padding-left: 0px;
+			padding-top: 60px;
+		}
+  	 }
+
+   }
+ // Formulario Contacto
+
+.contenedor-contacto{
+	
+
+	
+	
+	form{
+		width: 100%;
+	}
+	textfield, input{
+		font-family: $fuente-sans;
+	  	line-height: 29px;
+	  	font-size: 20px;
+	  	color: black;
+	  	border:0px;
+	 	 text-decoration:underline;
+		 border-radius: 0;
+		 -webkit-appearance: none;
+		 background-color:transparent;
+		line-height:20px;
+		height:34px;
+		
+		padding-left:0px;
+		margin-bottom: 0px;
+		max-width:500px;
+	}
+	label{
+		font-family: $fuente-sans;
+	  	line-height: 29px;
+	  	font-size: 20px;
+	  	color: black;
+	  	border:0px;
+	 	 padding-left:25px;
+		 border-radius: 0;
+		 -webkit-appearance: none;
+		 background-color:transparent;
+		line-height:20px;
+		height:34px;
+		
+		padding-left:0px;
+		margin-bottom: 0px;
+		max-width:500px;
+		span{
+		 font-size:40px; padding-left:3px;
+		 padding-right:13px;
+		}
+	}
+
+	textarea {
+		font-family: $fuente-sans;
+		padding:px;
+	  	font-size: 14px;
+	  	border:0px;
+	  	color: black;
+		border-bottom: 1px solid  black;
+		resize: none;
+		 -webkit-appearance: none;
+		 background-color:transparent;
+		 padding-top: 0px;
+		 margin-top: 0px;
+		margin-bottom: 0px;
+	}
+	input[type=submit]  {
+		margin-top: 14px;
+		font-family: $fuente-sans;
+  		border:0px;
+	  	font-size: 20px;
+	  	width: 100%;
+	  	line-height: 25px;
+	  	color: black;
+		 
+		 border-radius: 0;
+		 -webkit-appearance: none;
+		 background-color:transparent;
+		height:30px;
+		margin-bottom:0px !important;
+		text-decoration:none;
+		text-align:left;
+	}
+	::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+	  color: black;
+	  opacity: .9 !important;
+	}
+	::-moz-placeholder { /* Firefox 19+ */
+	  color: black;
+	  opacity: .9 !important;
+	}
+	:-ms-input-placeholder { /* IE 10+ */
+	  color: black;
+	  opacity: .9 !important;
+	}
+	:-moz-placeholder { /* Firefox 18- */
+	  color: black;
+	  opacity: .9 !important;
+	}
+	input::placeholder {
+  color: black;
+  opacity: .9 !important;
+}
+
+
+	h5{
+		
+		font-family: $fuente-sans;
+  		border:0px;
+	  	font-size: 20px;
+	  	
+	  	
+	  	color: black;
+		 
+		 
+	}
+	p {
+		text-align: left;
+		font-family: $fuente-sans;
+		font-size: 14px;
+		font-style: normal;
+		font-variant: normal;
+		font-weight: 500;
+		line-height: 30px;
+		color:black;
+		
+	} 
+
+	h2{
+		text-align: left;
+		font-family: $fuente-sans;
+		font-size: 14px;
+		font-style: normal;
+		font-variant: normal;
+		font-weight: 500;
+		line-height: 26.4px;
+		color:black;
+		padding-bottom:15px;
+	}
+	a{
+		color:black;
+		text-decoration:none;
+		
+    	
+	}
+	a:hover{
+		text-decoration:none;
+		color:black;
+		@include respond-to(chico){ 
+			
+			color:black;
+		}
+	}
+	a:visited{
+		text-decoration:none;
+		color:black;
+		@include respond-to(chico){ 
+			
+			color:black;
+		}
+		}
+	span{
+	 font-size:30px;
+	}
+}
+
+// Animacion Logo
+
+.logotipo-portada {
+	position: fixed;
+	z-index: 2;
+	left:70px;
+	top:70px;
+	width:160px;
+	height:34px;
+}
+
+.logotipo-portada img {
+
+	width:160px;
+	height:34px;
+}
+.informacion-completa{
+padding-top:100px;
+	padding-bottom:200px;
+	h4{
+		font-family: $fuente-sans;
+		border:0px;
+	  	font-size: 14px;
+	  	color: $color-texto;
+	  	
+	  	padding-top:20px;
+	}
+	p{
+		font-family: $fuente-sans;
+			border:0px;
+		  	font-size: 16px;
+		  	color: black;
+		  	padding-bottom:12px;
+	}
+}
+.columna-derecha{
+
+		text-align: right;
+		font-family: $fuente-sans;
+		font-size: 16px;
+		font-style: normal;
+		font-variant: normal;
+		font-weight: 500;
+		color:black;
+		a{
+			font-family: $fuente-sans;
+			border:0px;
+		  	font-size: 16px;
+		  	color: black;
+		 
+		}
+}
+.comida{
+	padding-top:165px !important;
+	h2{
+
+		font-family: $fuente-sans;
+		border:0px;
+	  	font-size: 20px;
+	  	color: $color-texto;
+	  	padding-bottom:20px;
+	  	padding-top:20px;
+	}
+	h3{
+
+		font-family: $fuente-sans;
+		border:0px;
+	  	font-size: 18px;
+	  	color: $color-texto;
+	  	
+	}
+}
+.contenedor-m{
+
+	a{
+		font-family: $fuente-sans;
+		border:0px;
+		line-height:30px;
+	  	font-size: 20px;
+	  	color: black;
+	  	padding-bottom:30px;
+	}
+}
+.seleccionado{
+	a{
+	color:$color-principal !important;
+	}
+	a:hover{
+	font-size: 20px;
+	color:$color-claro	 !important;
+	}
+	
+}
+.deseleccionado{
+	a{
+	font-size: 16px;
+	color:$color-destacado	 !important;
+	}
+	a:hover{
+	font-size: 20px;
+
+	color:$color-claro	 !important;
+	}
+	
+	
+}
